@@ -656,6 +656,7 @@
 		}
 		.activitySet .activityContent{
 			font-size: 22px;
+			font-weight: 500;
 		}
 		.activitySet .activityContent font.place{
 			color: #CFB5AC;
