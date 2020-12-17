@@ -1,0 +1,239 @@
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Noah & Alyshia</title>
+
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/jquery.easing.min.js"></script>
+	<script>
+		(function(d) {
+		  var config = {
+			kitId: 'yna7szp',
+			scriptTimeout: 3000,
+			async: true
+		  },
+		  h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+		})(document);
+		$(document).ready(function(){
+            //Page Scroll
+            $(function() {
+                $('a.page-scroll').bind('click', function(event) {
+                    var $anchor = $(this);
+                    $('html, body').stop().animate({
+                        scrollTop: $($anchor.attr('href')).offset().top - 90
+                    }, 2000, 'easeInOutExpo');
+                    event.preventDefault();
+                });
+            });
+            //Top Arrow Show
+            $("#topBtn").hide();
+            $(document).scroll(function() {
+            var y = $(this).scrollTop();
+            if (y > 500) {
+                $("#topBtn").fadeIn(1000);
+            } else {
+                $("#topBtn").fadeOut(1000);
+            }
+            });
+			//Nav Scroll to Show
+            $(document).scroll(function() {
+            var y = $(this).scrollTop();
+            if (y > 150) {
+                $("nav").addClass("scrollShow");
+            } else {
+                $("nav").removeClass("scrollShow");
+            }
+            });
+			//Menu Show
+			$("#navMenuBtn").click(function(){
+				$("nav").toggleClass("menuShow");
+			});
+			$("nav a").click(function(){
+                setTimeout(function(){
+                    $("nav").removeClass("menuShow");
+                }, 1500);
+            });
+        });
+	</script>
+	  
+	  
+	
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body id="top">
+	<div id="pageWarpper" class="gradient">
+		<div id="contentWarpper">
+			<nav>
+				<div id="navLogoContainer"></div>
+				<div id="navTitle" class="fontLinotypeDidot">Noah & Alyshia</div>
+				<div id="navMenuBtn"></div>
+				<ul class="fontLinotypeDidot">
+					<a href="#top" class="page-scroll"><li>Home</li></a>
+					<a href="#secondSection" class="page-scroll"><li>Letter</li></a>
+					<a href="#thirdSection" class="page-scroll"><li>Details</li></a>
+					<a href="#forthSection" class="page-scroll"><li>RSVP</li></a>
+					<a href="#fifthSection" class="page-scroll"><li>Gallery</li></a>
+				</ul>
+			</nav>
+			<div id="goTopContainer"><a href="#top" class="page-scroll"><div id="topBtn"></div></a></div>
+			<!-----------------------------
+				Section 1
+			------------------------------>
+			<section id="firstSection">
+				<div id="firstSectionTitleContainer">
+					<div class="fontLinotypeDidot">Noah & Alyshia</div>
+					<div class="subTitle">Are Getting Married</div>
+				</div>
+			</section>
+			<!-----------------------------
+				Section 2
+			------------------------------>
+			<section id="secondSection">
+				<div class="sectionContainer">
+					<div id="secondTextContainer">
+						<div class="sectionTitle">SHARE OUR HAPPINESS</div>
+						<div class="sectionContent desktop">親愛的，「我們要結婚了！」<br>謝謝一路上有你相伴，在身旁分享我們的喜與悲、嬉鬧與沈靜。<br>想告訴你「在生命旅途中能遇見你，是多麽感謝的一件事！」<br>感恩這份遇見，使你駐足，使你停留，從而讓我們一同走過歲月里靜好的時光。<br>在這個屬於我們的特別日子裡，有你的參與，是我們莫大的幸福。<br>我們婚禮上見唷 : )</div>
+						<div class="sectionContent mobile">親愛的，「我們要結婚了！」<br><br>謝謝一路上有你相伴，在身旁分享我們的喜與悲、嬉鬧與沈靜。想告訴你「在生命旅途中能遇見你，是多麽感謝的一件事！」感恩這份遇見，使你駐足，使你停留，從而讓我們一同走過歲月里靜好的時光。<br><br>在這個屬於我們的特別日子裡，有你的參與，是我們莫大的幸福。<br>我們婚禮上見唷 : )</div>
+					</div>
+				</div>
+			</section>
+			<!-----------------------------
+				Slideshow
+			------------------------------>
+			<div class="slideshowContainer">
+				<div class="slideshow">
+					<div class="mySlides fade">
+						<img src="images/slideshow_01.jpg" style="width:100%">
+					</div>
+					<div class="mySlides fade">
+						<img src="images/slideshow_02.jpg" style="width:100%">
+					</div>
+					<div class="mySlides fade">
+						<img src="images/slideshow_03.jpg" style="width:100%">
+					</div>
+					<div class="mySlides fade">
+						<img src="images/slideshow_04.jpg" style="width:100%">
+					</div>
+					<div class="mySlides fade">
+						<img src="images/slideshow_05.jpg" style="width:100%">
+					</div>
+					<!-- Next and previous buttons -->
+					<a class="prev" onclick="plusSlides(-1)"></a>
+					<a class="next" onclick="plusSlides(1)"></a>
+					<div><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+				</div>
+			</div>
+			<!-----------------------------
+				Section 3
+			------------------------------>
+			<section id="thirdSection">
+				<div class="sectionContainer">
+					<div class="thirdSectionTitleContainer">THE<br>WEDDING<br>DAY</div>
+					<div class="thirdSectionContentContainer">
+						<div class="activitySet">
+							<div class="activityTitle">婚宴</div>
+							<div class="activityContent fontLinotypeDidot">2021/3/14 Sunday<br>12:00 <font class="fontSHSerif">午宴</font><br><font class="fontSHSerif place">台北</font> <font class="fontSHSerif">晶華酒店</font> 4F <font class="fontSHSerif">寰宇廳</font></div>
+						</div>
+						<div class="activitySet">
+							<div class="activityTitle">歸寧</div>
+							<div class="activityContent fontLinotypeDidot">2021/3/20 Saturday<br>12:00 <font class="fontSHSerif">午宴</font><br><font class="fontSHSerif place">台中</font> <font class="fontSHSerif">林酒店</font> 7F <font class="fontSHSerif">台灣廳</font></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-----------------------------
+				Section 4
+			------------------------------>
+			<section id="forthSection">
+				<div class="sectionContainer">
+					<div class="sectionTitle fontLinotypeDidot">RSVP</div>
+					<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScBybogXmBTdsRq-nfEc6mPmT_NHOt7wSAJ7nU3pODv8nvutg/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0" style="background-color: #F9F3F3">載入中…</iframe>
+				</div>
+			</section>
+			<!-----------------------------
+				Section 5
+			------------------------------>
+			<section id="fifthSection">
+				<div class="sectionContainer">
+					<div class="row"> 
+						<div class="column">
+						  <img src="images/grid_01.jpg">
+						  <img src="images/grid_03.jpg">
+						  <img src="images/grid_08.jpg">
+						  <img src="images/grid_07.jpg">
+						  <img src="images/grid_09.jpg">
+						</div>
+						<div class="column">
+						  <img src="images/grid_04.jpg">
+						  <img src="images/grid_02.jpg">
+						  <img src="images/grid_05.jpg">
+						  <img src="images/grid_06.jpg">
+						  <img src="images/grid_10.jpg">
+						</div>
+						<div class="column">
+							<img src="images/grid_11.jpg">
+							<img src="images/grid_12.jpg">
+							<img src="images/grid_19.jpg">
+							<img src="images/grid_17.jpg">
+							<img src="images/grid_15.jpg">
+						  </div>
+						  <div class="column">
+							<img src="images/grid_13.jpg">
+							<img src="images/grid_14.jpg">
+							<img src="images/grid_16.jpg">
+							<img src="images/grid_18.jpg">
+							<img src="images/grid_20.jpg">
+						  </div>  
+					  </div>
+				</div>
+			</section>
+		</div><!-- /contentWarpper -->
+		<div id="footerWarpper">
+			<footer>
+				<div class="contactContainer">
+					<a href="https://www.instagram.com/alyshia_picon/"><div class="contactBtn ig"></div></a>
+					<a href="mailto:alyshia1204@gmail.com"><div class="contactBtn email"></div></a>
+					<a href="https://www.facebook.com/alyshia.lee.3/"><div class="contactBtn fb"></div></a>
+				</div>
+				<div class="copyrightContainer">Copyright © 2020 Alyshia Lee. All Rights Reserved.</div>
+			</footer>
+		</div><!-- /footerWarpper -->
+	</div><!-- /pageWarpper -->
+	<script>
+		var slideIndex = 1;
+		var timer = null;
+		showSlides(slideIndex);
+		
+		function plusSlides(n) {
+		  clearTimeout(timer);
+		  showSlides(slideIndex += n);
+		}
+		
+		function currentSlide(n) {
+		  clearTimeout(timer);
+		  showSlides(slideIndex = n);
+		}
+		
+		function showSlides(n) {
+		  var i;
+		  var slides = document.getElementsByClassName("mySlides");
+		  var dots = document.getElementsByClassName("dot");
+		  if (n==undefined){n = ++slideIndex}
+		  if (n > slides.length) {slideIndex = 1}    
+		  if (n < 1) {slideIndex = slides.length}
+		  for (i = 0; i < slides.length; i++) {
+			  slides[i].style.display = "none";  
+		  }
+		  for (i = 0; i < dots.length; i++) {
+			  dots[i].className = dots[i].className.replace(" active", "");
+		  }
+		  slides[slideIndex-1].style.display = "block";  
+		  dots[slideIndex-1].className += " active";
+		  timer = setTimeout(showSlides, 3500);
+		}
+	</script>
+
+
+</body>

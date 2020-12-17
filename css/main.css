@@ -1,0 +1,781 @@
+@charset "UTF-8";
+/*
+* @data 2020-12-17
+* Author: Alyshia Lee
+*
+* Web Stylesheet
+-----------------------------------
+   1. Universe
+   2. Navigation Bar
+   3. Footer
+   4. Section 1 - Home
+   5. Section 2 - Letter
+   6. Slideshow
+   7. Section 3 - Details
+   8. Section 4 - RSVP
+   9. Section 5 - Gallary
+-----------------------------------
+*/
+
+
+		/*===============================
+			1. Universe
+		================================*/
+		html, body{
+			height: 100%;
+		}
+		body{
+			margin: 0;
+			padding: 0;
+			font-family: brandon-grotesque, "Lucida Console", "Arial", "Helvetica",source-han-sans-cjk-tc, "微軟正黑體","DFHei", "Microsoft JhengHei","sans-serif";
+			font-size: 16px;
+			color: #2F2E2E;
+			letter-spacing: 0.08em;
+			background-color: #FAFAFA;
+		}
+		a{
+			text-decoration: none;
+		}
+		ul, li, ol{
+			padding: 0;
+			margin: 0;
+		}
+		* { box-sizing:border-box }
+		@font-face {
+			font-family: LinotypeDidot;
+			src: url(../font/linotypedidot-italic.ttf),
+				url(../font/linotypedidot-italic.otf);
+		  }
+		.fontLinotypeDidot{
+			font-family: LinotypeDidot, "Arial", "Helvetica";
+		}
+		.fontSHSerif{
+			font-family: source-han-serif-tc, serif, "微軟正黑體","DFHei";
+		}
+		#pageWarpper{
+			min-height: 100%;
+			position: relative;
+		}
+		#footerWarpper{
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+		}
+		#contentWarpper{
+			padding-bottom: 159px;/*footer height*/
+		}
+		/*-- Go Top --*/
+		#goTopContainer{
+			position: fixed;
+			right: 40px;
+			bottom: 40px;
+			z-index: 100;
+		}
+		#topBtn{
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			background: #876F5C;
+			background-image: url(../images/ic_white_up_arrow.svg);
+			background-size: 35px;
+			background-position: center;
+			background-repeat: no-repeat;
+			opacity: .5;
+			transition: all .3s;
+			-webkit-transition: all .3s;
+			-moz-transition: all .3s;
+			-ms-transition: all .3s;
+			-o-transition: all .3s;
+		}
+		#topBtn:hover{
+			opacity: 1;
+			transform: scale(1.08);
+			-webkit-transform: scale(1.08);
+			-moz-transform: scale(1.08);
+			-ms-transform: scale(1.08);
+			-o-transform: scale(1.08);
+			transition: all .3s;
+			-webkit-transition: all .3s;
+			-moz-transition: all .3s;
+			-ms-transition: all .3s;
+			-o-transition: all .3s;
+		}
+		/*=== Section Setting ===*/
+		.sectionContainer{
+			padding: 100px 50px;
+		}
+		
+
+		@media screen and (max-width: 768px){
+			#goTopContainer{
+				right: 20px;
+				bottom: 20px;
+			}
+			#topBtn{
+				width: 50px;
+				height: 50px;
+				border-radius: 25px;
+				background-size: 30px;
+				background-position: center;
+			}
+			.sectionContainer{
+				padding: 80px 50px;
+			}
+		}
+		@media screen and (max-width: 452px){
+			#contentWarpper{
+				padding-bottom: 187px;/*footer height*/
+			}
+		}
+		@media only screen and (max-width:430px){
+			.sectionContainer{
+				padding: 80px 35px;
+			}
+		}
+		
+		/*===============================
+			2. Navigation Bar
+		================================*/
+		nav{
+			width: 100%;
+			height: 90px;
+			line-height: 90px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			padding: 0 50px;
+			z-index: 100;
+			transition: all .3s;
+			-webkit-transition: all .3s;
+			-moz-transition: all .3s;
+			-ms-transition: all .3s;
+			-o-transition: all .3s;
+		}
+		nav::after{
+			display: block;
+			content: "";
+			clear: both;
+			float: none;
+		}
+		nav.scrollShow{
+			height: 70px;
+			line-height: 70px;
+			position: fixed;
+			left: 0;
+			top: 0px;
+			background: rgba(250, 250, 250, .9);
+			box-shadow: 0 3px 6px rgba(0, 0, 0, .1);
+			transition: all .3s;
+			-webkit-transition: all .3s;
+			-moz-transition: all .3s;
+			-ms-transition: all .3s;
+			-o-transition: all .3s;
+		}
+		#navLogoContainer{
+			width: 55px;
+			height: 70px;
+			background-image: url(../images/logo_white.svg);
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+			margin-top: 10px;
+			float: left;
+			margin-right: 50px;
+		}
+		nav.scrollShow #navLogoContainer{
+			width: 40px;
+			height: 50px;
+			background-image: url(../images/logo_brown.svg);
+			margin-right: 30px;
+		}
+		#navTitle{
+			color: #FFF;
+			font-size: 20px;
+			letter-spacing: .2em;
+			float: left;
+			display: none;
+		}
+		nav ul{
+			float: left;
+		}
+		nav ul::after{
+			display: block;
+			content: "";
+			clear: both;
+			float: none;
+		}
+		nav ul li{
+			list-style-type: none;
+		}
+		nav ul a{
+			font-size: 20px;
+			color: #FFF;
+			float: left;
+			opacity: .9;
+			text-decoration: none;
+			margin-right: 30px;
+		}
+		nav.scrollShow ul a{
+			font-size: 18px;
+			color: #90755F;
+		}
+		nav ul a:hover, nav ul a:active{
+			opacity: 1;
+		}
+		nav ul a:last-child{
+			margin-right: 0;
+		}
+		#navMenuBtn{
+			width: 30px;
+			height: 2px;
+			border-radius: 1px;
+			background: #FFF;
+			opacity: .9;
+			position: relative;
+			float: right;
+			margin-top: 27px;
+			margin-right: 50px;
+			cursor: pointer;
+			-webkit-transition: all .3s;
+			-moz-transition: all .3s;
+			-ms-transition: all .3s;
+			-o-transition: all .3s;
+			display: none;
+		}
+		#navMenuBtn::before, #navMenuBtn::after{
+			display: block;
+			content: "";
+			width: 30px;
+			height: 2px;
+			border-radius: 1px;
+			background: #FFF;
+			position: absolute;
+			left: 0;
+		}
+		#navMenuBtn::before{
+			top: -10px;
+		}
+		#navMenuBtn::after{
+			bottom: -10px;
+		}
+		#navMenuBtn:hover{
+			opacity: 1;
+		}
+		@media screen and (max-width: 768px){
+			nav{
+				height: 55px;
+				line-height: 55px;
+				padding: 0;
+			}
+			nav.scrollShow{
+				height: 55px;
+				line-height: 55px;
+				position: fixed;
+				left: 0;
+				top: 0px;
+				background: rgba(250, 250, 250, .9);
+				box-shadow: 0 3px 6px rgba(0, 0, 0, .1);
+				transition: all .3s;
+				-webkit-transition: all .3s;
+				-moz-transition: all .3s;
+				-ms-transition: all .3s;
+				-o-transition: all .3s;
+			}
+			nav.menuShow{
+				height: calc( 55px + 275px );
+				background: rgba(250, 250, 250, 1);
+				box-shadow: 0 3px 6px rgba(0, 0, 0, .1);
+			}
+			#navLogoContainer,
+			nav.scrollShow #navLogoContainer{
+				width: 35px;
+				height: 45px;
+				margin-right: 15px;
+				margin-top: 5px;
+				margin-left: 50px;
+			}
+			nav.menuShow #navLogoContainer{
+				background-image: url(../images/logo_brown.svg);
+			}
+			#navTitle{
+				display: block;
+			}
+			nav.menuShow #navTitle, nav.scrollShow #navTitle{
+				color: #90755F;
+			}
+			nav ul{
+				float: none;
+				clear: both;
+				text-align: center;
+				height: 0;
+				overflow: hidden;
+			}
+			nav.menuShow ul{
+				height: 275px;
+			}
+			nav ul a{
+				font-size: 18px;
+				color: #90755F;
+				float: none;
+				clear: both;
+				opacity: 1;
+				margin-right: 0;
+			}
+			nav ul a li{
+				background: rgba(250, 250, 250, 1);
+			}
+			nav ul a li:hover{
+				background: rgba(247, 233, 232, 1);
+			}
+			#navMenuBtn{
+				display: block;
+				-webkit-transition: all .3s;
+				-moz-transition: all .3s;
+				-ms-transition: all .3s;
+				-o-transition: all .3s;
+			}
+			nav.scrollShow #navMenuBtn, nav.scrollShow #navMenuBtn::before, nav.scrollShow #navMenuBtn::after{
+				background: #90755F;
+			}
+			nav.menuShow #navMenuBtn{
+				background: transparent;
+			}
+			nav.menuShow #navMenuBtn::before, nav.menuShow #navMenuBtn::after{
+				background: #90755F;
+				transition: all .3s;
+				-webkit-transition: all .3s;
+				-moz-transition: all .3s;
+				-ms-transition: all .3s;
+				-o-transition: all .3s;
+			}
+			nav.menuShow #navMenuBtn::before{
+				transform: rotate(45deg);
+				top: 0;
+			}
+			nav.menuShow #navMenuBtn::after{
+				transform: rotate(-45deg);
+				bottom: 0;
+			}
+		}
+		@media only screen and (max-width:430px){
+			#navLogoContainer,
+			nav.scrollShow #navLogoContainer{
+				margin-left: 20px;
+			}
+			#navTitle{
+				display: none;
+			}
+			nav.scrollShow #navTitle{
+				display: block;
+				font-size: 18px;
+			}
+			#navMenuBtn{
+				margin-right: 20px;
+			}
+		}
+		/*===============================
+			3. Footer
+		================================*/
+		footer{
+			background: #90755F;
+			padding: 30px 30px 40px 30px;
+			text-align: center;
+			color: #FFF;
+		}
+		.contactContainer{
+			width: calc( 46px * 3 + 30px * 2 );
+			margin: 0 auto 15px;
+		}
+		.contactContainer::after{
+			display: block;
+			content: "";
+			clear: both;
+			float: none;
+		}
+		.contactContainer a{
+			float: left;
+			margin-right: 30px;
+		}
+		.contactContainer a:last-child{
+			margin-right: 0;
+		}
+		.contactContainer .contactBtn{
+			width: 46px;
+			height: 46px;
+			border-radius: 50%;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 26px;
+		}
+		.contactContainer .contactBtn:hover,
+		.contactContainer .contactBtn:active{
+			background-color: rgba(0,0,0,0.2);
+		}
+		.contactBtn.ig{
+			background-image: url(../images/icon_ig.svg);
+		}
+		.contactBtn.email{
+			background-image: url(../images/icon_email.svg);
+		}
+		.contactBtn.fb{
+			background-image: url(../images/icon_fb.svg);
+		}
+		.copyrightContainer{
+			line-height: 1.8;
+		}
+
+		/*===============================
+			4. Section 1
+		================================*/
+		#firstSection{
+			height: 110%;
+			width: 100%;
+			background-image: url(../images/20191105RAY03891-edit.jpg);
+			background-repeat: no-repeat;
+			background-size: cover;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-ms-background-size: cover;
+			-o-background-size: cover;
+			background-position: center;
+			background-attachment: fixed;
+			position: relative;
+		}
+		#firstSectionTitleContainer{
+			padding-top: 30%;
+			color: #FFF;
+			text-align: center;
+		}
+		#firstSectionTitleContainer .fontLinotypeDidot{
+			font-size: 60px;
+			letter-spacing: .2em;
+		}
+		#firstSectionTitleContainer .subTitle{
+			font-size: 24px;
+			letter-spacing: .2em;
+			margin-top: 15px;
+			font-weight: 300;
+		}
+		@media screen and (max-width: 1024px){
+			#firstSectionTitleContainer{
+				padding-top: 40%;
+			}
+		}
+		@media screen and (max-width: 768px){
+			#firstSection{
+				background-attachment: scroll;
+			}
+			#firstSectionTitleContainer{
+				padding-top: 65%;
+			}
+			#firstSectionTitleContainer .fontLinotypeDidot{
+				font-size: 48px;
+			}
+			#firstSectionTitleContainer .subTitle{
+				font-size: 20px;
+			}
+		}
+		@media screen and (max-width: 430px){
+			#firstSectionTitleContainer{
+				padding-top: 22%;
+			}
+			#firstSectionTitleContainer .fontLinotypeDidot{
+				font-size: 32px;
+			}
+			#firstSectionTitleContainer .subTitle{
+				font-size: 18px;
+				margin-top: 5px;
+			}
+		}
+		@media screen and (max-width: 375px){
+			#firstSectionTitleContainer .fontLinotypeDidot{
+				font-size: 28px;
+			}
+		}
+
+		/*===============================
+			5. Section 2
+		================================*/
+		#secondSection{
+			background: #CFB5AC;
+			text-align: center;
+			padding-bottom: 250px;
+		}
+		#secondTextContainer .sectionTitle{
+			font-weight: 300;
+			font-size: 26px;
+			letter-spacing: .8em;
+			line-height: 1.8;
+		}
+		#secondTextContainer .sectionContent{
+			margin-top: 50px;
+			font-size: 16px;
+			line-height: 2;
+		}
+		#secondTextContainer .sectionContent.mobile{
+			text-align: justify;
+			display: none;
+		}
+		@media screen and (max-width: 980px){
+			#secondSection{
+				padding-bottom: 0;
+			}
+		}
+		@media screen and (max-width: 768px){
+			#secondTextContainer .sectionTitle{
+				font-size: 22px;
+			}
+			#secondTextContainer .sectionContent.desktop{
+				display: none;
+			}
+			#secondTextContainer .sectionContent.mobile{
+				text-align: justify;
+				display: block;
+			}
+		}
+		@media screen and (max-width: 375px){
+			#secondTextContainer .sectionContent{
+				margin-top: 30px;
+			}
+		}
+
+		/*===============================
+			6. Slideshow
+		================================*/
+		.slideshowContainer{
+			/* position: absolute;
+			bottom: -50; */
+			margin-top: -250px;
+		}
+		.slideshow{
+			max-width: 980px;
+			position: relative;
+			margin: auto;
+			background-color: #2F2E2E;
+		}
+		/* Hide the images by default */
+		.mySlides {
+			display: none;
+		}
+		/* Next & previous buttons */
+		.prev, .next {
+			cursor: pointer;
+			position: absolute;
+			top: 50%;
+			width: 45px;
+			height: 70px;
+			margin-top: -22px;
+			padding: 15px;
+			color: #FFF;
+			transition: .3s ease;
+			border-radius: 0 5px 5px 0;
+			user-select: none;
+			opacity: .8;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 30px;
+		}
+		/* Position the "next button" to the right */
+		.prev{
+			left: 0;
+			background-image: url(../images/ic_white_left.svg);
+		}
+		.next {
+			right: 0;
+			background-image: url(../images/ic_white_right.svg);
+			border-radius: 5px 0 0 5px;
+		}
+		/* On hover, add a black background color with a little bit see-through */
+		.prev:hover, .next:hover, .prev:active, .next:active {
+			background-color: rgba(0,0,0,0.5);
+			opacity: 1;
+		}
+
+		/* The dots/bullets/indicators */
+		.dot {
+			display: none;
+		}
+
+		/* Fading animation */
+		.fade {
+			-webkit-animation-name: fade;
+			-webkit-animation-duration: 1.5s;
+			animation-name: fade;
+			animation-duration: 1.5s;
+		}
+		@-webkit-keyframes fade {
+			from {opacity: .4}
+			to {opacity: 1}
+		}
+		@keyframes fade {
+			from {opacity: .4}
+			to {opacity: 1}
+		}
+		@media screen and (max-width: 980px){
+			.slideshowContainer{
+				margin-top: 0;
+			}
+		}
+
+		/*===============================
+			7. Section 3
+		================================*/
+		#thirdSection .sectionContainer::after{
+			display: block;
+			content: "";
+			clear: both;
+			float: none;
+		}
+		.thirdSectionTitleContainer{
+			font-weight: 300;
+			font-size: 26px;
+			letter-spacing: .8em;
+			line-height: 1.8;
+			background-image: url(../images/img_leaf.svg);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+			display: inline-block;
+			float: left;
+			margin-right: 100px;
+			margin-left: calc( (100% - 270px - 330px - 100px) / 2);
+		}
+		.thirdSectionContentContainer{
+			float: left;
+			line-height: 1.8;
+			letter-spacing: .4em;
+		}
+		.activitySet:first-child{
+			margin-bottom: 50px;
+		}
+		.activitySet .activityTitle{
+			font-size: 24px;
+			font-weight: 700;
+			color: #90755F;
+		}
+		.activitySet .activityContent{
+			font-size: 22px;
+		}
+		.activitySet .activityContent font.place{
+			color: #CFB5AC;
+		}
+		@media screen and (max-width: 980px){
+			.thirdSectionTitleContainer{
+				float: none;
+				width: 330px;
+				margin: 0 auto 50px;
+				display: block;
+			}
+			.thirdSectionContentContainer{
+				float: none;
+				width: 330px;
+				margin: 0 auto;
+			}
+		}
+		@media screen and (max-width: 768px){
+			.thirdSectionTitleContainer{
+				font-size: 22px;
+				width: 315px;
+			}
+			.thirdSectionContentContainer{
+				width: 315px;
+			}
+			.activitySet:first-child{
+				margin-bottom: 30px;
+			}
+			.activitySet .activityTitle{
+				font-size: 22px;
+			}
+			.activitySet .activityContent{
+				font-size: 20px;
+			}
+		}
+		@media screen and (max-width: 375px){
+			.thirdSectionTitleContainer{
+				width: auto;
+				margin: 0 auto 30px;
+			}
+			.thirdSectionContentContainer{
+				width: auto;
+			}
+			.activitySet .activityTitle{
+				font-size: 20px;
+			}
+			.activitySet .activityContent{
+				font-size: 18px;
+			}
+		}
+
+		/*===============================
+			8. Section 4
+		================================*/
+		#forthSection{
+			background: #90755F;
+		}
+		#forthSection .sectionTitle{
+			font-size: 26px;
+			letter-spacing: .8em;
+			line-height: 1.8;
+			text-align: center;
+			margin-bottom: 15px;
+			color: #FFF;
+		}
+		#forthSection .sectionContainer{
+			padding: 80px 50px;
+		}
+		@media screen and (max-width: 430px){
+			#forthSection .sectionContainer{
+				padding: 50px 15px;
+			}
+		}
+
+		/*===============================
+			9. Section 5
+		================================*/
+		#fifthSection{
+			background: #F7E9E8;
+		}
+		#fifthSection img{
+			width: 100%;
+		}
+		.row {
+			display: -ms-flexbox; /* IE10 */
+			display: flex;
+			-ms-flex-wrap: wrap; /* IE10 */
+			flex-wrap: wrap;
+			padding: 0 4px;
+		  }
+		  
+		  /* Create four equal columns that sits next to each other */
+		  .column {
+			-ms-flex: 25%; /* IE10 */
+			flex: 25%;
+			max-width: 25%;
+			padding: 0 4px;
+		  }
+		  
+		  .column img {
+			margin-top: 8px;
+			vertical-align: middle;
+			width: 100%;
+		  }
+		  
+		  /* Responsive layout - makes a two column-layout instead of four columns */
+		  @media screen and (max-width: 800px) {
+			.column {
+			  -ms-flex: 50%;
+			  flex: 50%;
+			  max-width: 50%;
+			}
+		  }
+		  
+		  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+		  @media screen and (max-width: 320px) {
+			.column {
+			  -ms-flex: 100%;
+			  flex: 100%;
+			  max-width: 100%;
+			}
+		  }
+		
